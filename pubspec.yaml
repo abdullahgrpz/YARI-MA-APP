@@ -9,6 +9,13 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  audioplayers: ^5.2.0   # SES İÇİN EKLENDİ
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/coin.png
+    - assets/sounds/countdown_beep.mp3
+    - assets/sounds/start_bell.mp3
+    - assets/sounds/target_ding.mp3
+    - assets/sounds/fail_buzzer.mp3

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'spectator_screen.dart';
 
 class ResultScreen extends StatelessWidget {
   final int duration;
@@ -17,8 +18,19 @@ class ResultScreen extends StatelessWidget {
                 ? Text("Diskalifiye Oldunuz!", style: TextStyle(fontSize: 24, color: Colors.red))
                 : Text("Süreniz: $duration saniye", style: TextStyle(fontSize: 24)),
             SizedBox(height: 20),
+            if (eliminated)
+              ElevatedButton(
+                child: Text("Yarışmayı İzle"),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => SpectatorScreen()),
+                  );
+                },
+              ),
+            SizedBox(height: 10),
             ElevatedButton(
-              child: Text("Tekrar Oyna"),
+              child: Text("Ana Sayfa"),
               onPressed: () {
                 Navigator.popUntil(context, (route) => route.isFirst);
               },
